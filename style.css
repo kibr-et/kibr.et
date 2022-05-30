@@ -1,0 +1,185 @@
+/* html {
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+  font-family: system-ui;
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+}
+
+body * {
+  background: inherit;
+  color: inherit;
+}
+
+.small {
+  font-size: 0.8em;
+}
+
+.d-block {
+  display: block;
+}
+
+.btn, .w3-btn {
+  border: 1px solid #887;
+  padding: 0.5em 0.75em;;
+}
+
+.d-none {
+  display: none;
+}
+
+input,
+.w3-input {
+  border: 1px solid #887;
+}
+
+.copy-button {
+  bottom: 0px;
+  z-index: 9;
+}
+
+.p-1 {
+  padding: 0.5em;
+}
+
+.ml-1 {
+  margin-left: 0.5em;
+}
+
+.mb-5 {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.pb-5 {
+  display: block;
+  padding-bottom: 5px;
+}
+
+.mb-1 {
+  margin-bottom: 1em;
+}
+
+.mb-2 {
+  margin-bottom: 2em;
+}
+
+.pb-2 {
+  padding-bottom: 2em;
+}
+
+.full {
+  width: 100%;
+  position: relative;
+} */
+
+@font-face {
+  font-family: vg;
+  src: url(assets/vg.ttf);
+}
+
+*,
+*:before,
+*:after {
+  font-family: vg !important;
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+}
+
+a {
+  color: #2A363B;
+  text-decoration: none;
+}
+
+.fixed-footer {
+  position: fixed;
+  bottom: 0;
+  left: 0px;
+  right: 0px;
+  width: 100%;
+  padding-top: 0.5em;
+  padding-bottom: 1.5em;
+  background: #111;
+}
+
+.fixed-footer .footer-inputs {
+  padding: 5px 0px;
+  text-align: center;
+}
+
+#book-selector {
+  margin-bottom: 100px;
+}
+
+.result-verse {
+  margin-bottom: 1em;
+  padding: 0.5em;
+  border: 1px solid #332;
+  background: #111;
+}
+
+.verse-text {
+  display: block;
+  margin-bottom: 0.5em;
+}
+
+.verse-text sup {
+  opacity: 0.5;
+}
+
+.passage-title {
+  padding: 0.5em;
+  background: #222;
+  margin-bottom: 0.25em;
+}
+
+.passage-list a {
+  display: contents;
+  word-wrap: break-word;
+}
+
+body, .bg-black{
+  background: #FECEAB;
+  color: #2A363B;
+}
+
+
+.accordion-button::after {
+  flex-shrink: 0;
+  width: 1.25rem;
+  height: 1.25rem;
+  margin-left: auto;
+  content: "+";
+  background-image: unset;
+  background-repeat: no-repeat;
+  background-size: 1.25rem;
+  transition: transform .2s ease-in-out;
+}
+
+.accordion-button:not(.collapsed)::after {
+  background-image: unset;
+  transform: unset;
+  content: "-";
+}
+
+.accordion-item {
+  background-color: inherit; 
+}
+
+.question {
+  width: 70px;
+  outline: none;
+  border-width: 0px 0px 1px 0px;
+}
+.success {
+  background: rgb(121, 226, 121) !important;
+  color: blue !important;;
+  font-weight: bold !important;;
+}

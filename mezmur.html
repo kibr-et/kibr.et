@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta charset="UTF-8">
+<title>Mezmur collection | kibret</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link href='manifest.json' rel='manifest'>
+<link href="assets/bootstrap.min.css" rel="stylesheet">
+<link href="style.css" rel="stylesheet">
+<link rel="apple-touch-icon" sizes="any" href="images/icon.png">
+<link rel="icon" type="image/png" sizes="any" href="images/icon.png">
+
+
+<body ng-app="songsApp" ng-controller="songsCtrl">
+
+  <!-- <header class="mb-3 " ng-include="'header.html'"></header> -->
+  
+  <div class="container">
+
+    <div class="row">
+      <div class="col-12">
+        <form class="">
+          <div class="mb-3">
+            <input ng-model="tagSearch" type="text" class="form-control rounded-0 p-2 fs-4" id="search-field" aria-describedby="search-Help" placeholder="መፈለጊያ" onfocus="expandAll('song-selector');" onkeyup="amh('search-field')">
+
+            <div id="search-Help" class="form-text">Type words and press space</div>
+          </div>
+        </form>
+      </div>
+      <div class="col-12">
+        
+        <span class="btn-sm rounded-0 border float-end px-2 ml-2" onclick="collapseAll('song-selector')">- All</span>
+        <span class="btn-sm rounded-0 border float-end px-2 ml-2" onclick="expandAll('song-selector')">+ All</span>
+
+        <div class="accordion accordion-flush" id="song-selector">
+          
+          <div class="accordion-item" ng-repeat="a in list | filterall: tagSearch  | orderBy : 'singer'">
+            <h2 class="accordion-header" id="flush-heading-{{$index}}">
+              <button class="accordion-button p-2" type="button" data-bs-toggle="collapse"
+                data-bs-target="#flush-collapse-{{$index}}" aria-expanded="true" aria-controls="flush-collapse-{{$index}}">
+                {{a.singer}}
+              </button>
+            </h2>
+            <div id="flush-collapse-{{$index}}" class="accordion-collapse collapse show" aria-labelledby="flush-heading-{{$index}}" data-bs-parent2="#song-selector">
+              <div class="song-list accordion-body p-0 mb-2">
+                <a ng-repeat="song in a.songs | filterall: tagSearch  | orderBy : 't'" href="song.html?s={{a.singer}}&t={{song.t}}">
+                  <small ng-if="!$last">{{song.t}} &bull; </small>
+                  <small ng-if="$last">{{song.t}}</small>
+                </a>
+              </div>
+            </div>
+          </div>
+  
+        </div>
+  
+  
+      </div>
+    </div>
+  
+  </div>
+  
+
+
+
+
+
+
+
+
+</div>
+
+<script src="assets/angular.min.js"></script>
+<script src="assets/bootstrap.bundle.min.js"></script>
+<script src="functions.js"></script>
+<script src="songs.js"></script>
+
+</body>
+
+</html>
